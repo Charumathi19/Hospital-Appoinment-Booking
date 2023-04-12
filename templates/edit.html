@@ -1,0 +1,114 @@
+{% extends 'base.html' %}
+{% block 'main' %}
+<main class="mb-4">
+    <div class="container px-4 px-lg-5">
+        <div class="row gx-4 gx-lg-5 justify-content-center">
+            <div class="col-md-10 col-lg-8 col-xl-7">
+                <p></p>
+                <h4>Edit Post</h4>
+                <div class="my-5">
+                    <!-- * * * * * * * * * * * * * * *-->
+                    <!-- * * SB Forms Contact Form * *-->
+                    <!-- * * * * * * * * * * * * * * *-->
+                    <!-- This form is pre-integrated with SB Forms.-->
+                    <!-- To make this form functional, sign up at-->
+                    <!-- https://startbootstrap.com/solution/contact-forms-->
+                    <!-- to get an API token!-->
+                    <form id="contactForm" method="POST" action="{{data.id}}" data-sb-form-api-token="API_TOKEN">
+                        {% csrf_token %}
+                        {% for x in data %}
+                        <div class="form-floating">
+                            <input class="form-control" id="name" name="pname" value="{{x.name}}" type="text" placeholder="Enter your Post title..." data-sb-validations="required" />
+                            <label for="name">Paitent Name</label>
+                            <div class="invalid-feedback" data-sb-feedback="name:required">A name is required.</div>
+                        </div>
+                        <div class="form-floating">
+                            <input class="form-control" id="sdesc" name="pphoneno" value="{{x.phoneno}}" type="number" placeholder="Enter your small description..." data-sb-validations="required,email" />
+                            <label for="email">Phone Number</label>
+                            <div class="invalid-feedback" data-sb-feedback="email:required">An email is required.</div>
+                            <div class="invalid-feedback" data-sb-feedback="email:email">Email is not valid.</div>
+                        </div>
+                        <div class="form-floating">
+                          <select class="form-select" name="location" aria-label="Default select example">
+                              {% if x.location == 1%}
+                              <option value="1">Thambram</option>
+                              {% elif x.location == 2%}
+                              <option value="2">T-nagar</option>
+                              {% elif x.location == 3%}
+                              <option value="3">Kilpauk</option>
+                              {% elif x.location == 4%}
+                              <option value="4">Poonamallee</option>
+                              {% else %}
+                              <option value="5">Ambattur</option>
+                              {% endif%}
+                            </select>
+                      </div>
+                      {% if x.gender == 1 %}
+                      <div class="form-check">
+                         <input class="form-check-input" type="radio" value="1" name="gender" id="flexRadioDefault1" checked>
+                         <label class="form-check-label" for="flexRadioDefault1">
+                           Male
+                         </label>
+                       </div>
+                       <div class="form-check">
+                         <input class="form-check-input" type="radio" value="0" name="gender" id="flexRadioDefault2" >
+                         <label class="form-check-label" for="flexRadioDefault2">
+                           Female
+                         </label>
+                       </div>
+                        {% else %}
+                       <div class="form-check">
+                         <input class="form-check-input" type="radio" value="1" name="gender" id="flexRadioDefault1" checked>
+                         <label class="form-check-label" for="flexRadioDefault1">
+                           Male
+                         </label>
+                       </div>
+                       <div class="form-check">
+                         <input class="form-check-input" type="radio" value="0" name="gender" id="flexRadioDefault2" >
+                         <label class="form-check-label" for="flexRadioDefault2">
+                           female
+                         </label>
+                       </div>
+                     {% endif %}
+
+                     <div class="form-floating">
+                      <textarea class="form-control" id="det" name="det" placeholder="Enter your message here..." style="height: 12rem" data-sb-validations="required">{{x.message}}</textarea>
+                      <label for="message">Message</label>
+                      <div class="invalid-feedback" data-sb-feedback="message:required">A message is required.</div>
+                     </div>
+                
+                        <!--<div class="form-floating">
+                            <input class="form-control" id="phone" type="tel" placeholder="Enter your phone number..." data-sb-validations="required" />
+                            <label for="phone">Phone Number</label>
+                            <div class="invalid-feedback" data-sb-feedback="phone:required">A phone number is required.</div>
+                        </div>-->
+                        
+                        <br/>
+                        
+                        <!-- Submit success message-->
+                        <!---->
+                        <!-- This is what your users will see when the form-->
+                        <!-- has successfully submitted-->
+                        <div class="d-none" id="submitSuccessMessage">
+                            <div class="text-center mb-3">
+                                <div class="fw-bolder">Form submission successful!</div>
+                                To activate this form, sign up at
+                                <br />
+                                <a href="https://startbootstrap.com/solution/contact-forms">https://startbootstrap.com/solution/contact-forms</a>
+                            </div>
+                        </div>
+                        <!-- Submit error message-->
+                        <!---->
+                        <!-- This is what your users will see when there is-->
+                        <!-- an error submitting the form-->
+                        <div class="d-none" id="submitErrorMessage"><div class="text-center text-danger mb-3">Error sending message!</div></div>
+                        <!-- Submit Button-->
+                        <button class="btn btn-primary text-uppercase" id="submitButton" type="submit">Send</button>
+                        {% endfor %}
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+{% endblock 'main' %}

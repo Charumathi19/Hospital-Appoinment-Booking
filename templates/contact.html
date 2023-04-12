@@ -1,0 +1,57 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block 'main' %}
+<!-- Main Content-->
+<h1 style="color:blueviolet; text-align: center; font-size: 4rem;">We Are Not So Far Away</h1>
+<p style="font-size: 2rem; margin-left: 10%;">We are in 10 Locations in Tamil Nadu. 24 Hours Neighbourhood Emergency Care Hospital.
+</p>
+<table cellpadding="30" style="font-size: 3rem;" align="center">
+    <tr> 
+      <td style="border-radius: 25%; border: 2px;"><a href="cpost" title="bones icons"><button class="btn btn-primary text-uppercase" id="submitButton" type="submit">Book Appionment</button></a></td>
+      <td >9698 300 300</td>
+    </tr>
+</table>
+<div style="width: 1400px; height: 800px; margin-left: 0%;">
+    <span style="font-size: 3rem; margin-left: 15%; margin-top: 20%;">
+        Thankyou For Visiting Uss!!
+    </span>
+    <span><img width="600px" height="800px" style="float:right; margin-top: 0%;" src={% static 'img/map.png' %}>
+        <p style="margin-top: 10%; font-size: 2rem; margin-left: 24%;">Visit our Social Medias</p>
+                <ul style="margin-top: 1%; margin-left: 14%;" class="list-inline text-center">
+                    <li class="list-inline-item">
+                        <a href="https://twitter.com/BeWellHospitals">
+                            <span class="fa-stack fa-lg">
+                                <i class="fas fa-circle fa-stack-2x"></i>
+                                <i class="fab fa-twitter fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                    <li class="list-inline-item">
+                        <a href="https://www.facebook.com/bewellhospitals">
+                            <span class="fa-stack fa-lg">
+                                <i class="fas fa-circle fa-stack-2x"></i>
+                                <i class="fab fa-facebook-f fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                    <li class="list-inline-item">
+                        <a href="https://www.instagram.com/bewell_hospitals/">
+                            <span class="fa-stack fa-lg">
+                                <i class="fas fa-circle fa-stack-2x"></i>
+                                <i class="fab fa-instagram fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                    <li class="list-inline-item">
+                        <a href="https://api.whatsapp.com/send?phone=+919698300300&text=Hello this is the starting message">
+                            <span class="fa-stack fa-lg">
+                                <i class="fas fa-circle fa-stack-2x"></i>
+                                <i class="fab fa-whatsapp fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                </ul>
+            </span>
+
+</div>
+{% endblock 'main' %} 

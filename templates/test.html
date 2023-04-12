@@ -1,0 +1,16 @@
+{% load static %}
+<html>
+<head>
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+    <p>Name: {{name}}</p><br>
+    <p>RollNo:{{RollNo}}</p><br>
+    <p>Conatact No: {{contact}}</p><br>
+    <p>Email Id: {{email}}</p><br>
+    <button onclick="click()">Submit</button>
+    <img src={% static 'img/bts.jpg' %}>
+    <script src={% static 'js/main.js' %}></script>
+</body>
+</html>

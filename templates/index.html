@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% block 'main' %}
+<h2 class="post-title">SPECIALITIES</h2>
+<div class="container px-4 px-lg-5">
+            <!-- Post preview-->
+            <div class="post-preview">
+                <table id="tab" cellpadding="10" cellspacing="50">
+                    <tr>
+                        <td><a href="ent"  class="ent__nav"><img id="ent1" class="ent__tran" src="static/assets/img/head.png"></a></td>
+                        <td><a href="ortho" class="bones__nav"><img id="bone" class="bone_tran" src="static/assets/img/bones.png"></a></td>
+                        <td><a href="dentist"  class="dentist__nav"><img id="dental" class="dental__tran" src="static/assets/img/dental-care.png"></a></td>
+                        <td > <a href="cardio"  class="cardio__nav"><img id="heart" class="heart_tran" src="static/assets/img/heart.png"></a></td>
+                    </tr>
+                    <tr>
+                        <td class="des"><p>Ent</p></td>
+                        <td class="des"><p>Orthopaedics</p></td>
+                        <td class="des"><p>Dentistry</p></td>
+                        <td class="des"><p>Cardiology</p></td>
+                    </tr>
+                </table>   
+            </div>
+           
+</div>
+{% endblock 'main' %}

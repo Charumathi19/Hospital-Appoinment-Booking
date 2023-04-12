@@ -1,0 +1,66 @@
+{% extends 'base.html' %}
+{% block 'main' %}
+<br>
+<table class="table table-hover">
+  <thead>
+    <tr>
+      <th scope="col">ID</th>
+      <th scope="col">Paient Name</th>
+      <th scope="col">Phone Number</th>
+      <th scope="col">Date</th>
+      <th scope="col">Time</th>
+      <th scope="col">Location</th>
+      <th scope="col">Gender</th>
+      <th scope="col">Message</th>
+      <th scope="col">Edit</th>
+      <th scope="col">Delete</th>
+
+    </tr>
+  </thead>
+  <tbody>
+       {% for x in data %}
+       <tr>
+              <th scope="row">{{x.id}}</th>
+              <td>{{x.name}}</td>
+              <td>{{x.phoneno}}</td>
+              <td>{{x.date}}</td>
+              <td>{{x.time}}</td>
+               {% if x.location == 1 %}
+               <td>Thambram</td>
+               {% elif x.location == 2 %}
+               <td>T-nagar</td>
+               {% elif x.location == 3 %}
+               <td>Kilpauk</td>
+               {% elif x.location == 4 %}
+               <td>Poonamallee</td>
+               {% else %}
+               <td>Ambattur</td>
+               {% endif %}
+
+              {% if x.gender == 1 %}
+              <td>Male</td>
+              {% else %}
+              <td>Female</td>
+              {% endif %}
+              <td>{{x.message}}</td>
+
+              <td><a href="edit/{{x.id}}"><button class="btn btn-warning">Edit</button></a></td>
+              <td><a href="delete/{{x.id}}"><button class="btn btn-danger">Delete</button></a></td>
+            </tr>
+       {% endfor %}
+  </tbody>
+  </table>
+{% endblock 'main' %}
+       <!--<h3>Retrive Data</h3>
+       {% for x in data %}
+       <table border="1" cellpadding="10" cellspacing="2">
+       <tr>
+        <td>{{x.title}}</td>
+        <td>{{x.sdesc}}</td>
+        <td>{{x.det}}</td>
+        <td>{{x.category}}</td>
+        <td>{{x.isactive}}</td>
+       </tr>
+       </table>
+       {% endfor %}-->
+      

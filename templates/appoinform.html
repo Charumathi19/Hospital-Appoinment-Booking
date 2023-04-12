@@ -1,0 +1,74 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block 'main' %}
+<div>
+<h2 style="font-size: 3rem; font-weight: 700; color: blueviolet;" align="center">View Appoinment</h2><br>
+<h3 style="font-size: 1rem; font-weight: 400; color: green; text-shadow: 4px 4px 4px lightgreen;" align="center"><i>Appoinment Generated Sucessfully</i></h3><br><br>
+<div>
+<table class="tab_4app" style="font-size: 1.3rem; background-color: lightcyan; width: 700px; align-items: center; text-align: center; align-self: center; border-radius: 80px; " align="center" cellpadding="20">
+    {% for x in data %}
+       <tr>
+        <td>Paitent Id: </td>
+        <td>{{x.id}}</td>
+       </tr>
+       <tr>
+        <td>Paitent Name: </td>
+        <td>{{x.name}}</td>
+       </tr>
+       <tr>
+        <td>Phone Number: </td>
+        <td>{{x.phoneno}}</td>
+       </tr>
+       <tr>
+        <td>Appoinment Date: </td>
+        <td>{{x.date}}</td>
+       </tr>
+       <tr>
+        <td>Appoinment Time: </td>
+        <td>{{x.time}}</td>
+       </tr>
+       <tr>
+        <td>Location: </td>
+        {% if x.location == 1 %}
+        <td>Thambram</td>
+        {% elif x.location == 2 %}
+        <td>T-nagar</td>
+        {% elif x.location == 3 %}
+        <td>Kilpauk</td>
+        {% elif x.location == 4 %}
+        <td>Poonamallee</td>
+        {% else %}
+        <td>Ambattur</td>
+        {% endif %} 
+       </tr>
+       <tr>
+        <td>Gender: </td>
+        {% if x.gender == 1 %}
+        <td>Male</td>
+        {% else %}
+        <td>Female</td>
+        {% endif %}
+       </tr>
+       <tr>
+        <td>Message: </td>
+        <td>{{x.message}}</td>
+       </tr>
+    {% endfor %}
+</table><br>
+</div>
+<a href="contact"><button class="btn btn-primary text-uppercase" id="submitButton" type="submit" align="center">Close</button></a><br><br>
+</div>
+{% endblock 'main' %}
+       <!--<h3>Retrive Data</h3>
+       {% for x in data %}
+       <table border="1" cellpadding="10" cellspacing="2">
+       <tr>
+        <td>{{x.title}}</td>
+        <td>{{x.sdesc}}</td>
+        <td>{{x.det}}</td>
+        <td>{{x.category}}</td>
+        <td>{{x.isactive}}</td>
+       </tr>
+       </table>
+       {% endfor %}-->
+      
